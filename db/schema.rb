@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_22_164809) do
+ActiveRecord::Schema.define(version: 2021_03_22_201425) do
+
+  create_table "news", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "content"
+    t.string "author"
+    t.boolean "active", default: true
+    t.integer "status", default: 0
+    t.integer "category", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "title", null: false
